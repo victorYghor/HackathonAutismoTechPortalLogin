@@ -39,20 +39,20 @@
           <input type="password" placeholder="Senha">
         </div>
       </div>
-      <button class="login-button">ENTRAR</button>
+      <button class="login-button" >ENTRAR</button>
       <a href="#" class="forgot-password">Esqueci minha senha</a>
     </div>
   </div>
 
-    <div class="modal" id="modal1" role="dialog" aria-labelledby="modal1-title" aria-hidden="true">
-      <div class="modal-content">
-        <h1 id="modal1-title">Deseja ativar o <span class="highlight">TRADUZ</span>?</h1>
+  <dialog class="modal" id="modal1" tabIndex="-1" aria-labelledby="modal1-title" aria-describedby="modal1-description">
+    <div class="modal-content">
         <div class="button-group">
-          <button class="accept" onclick="activateTranslate()">SIM</button>
+          <h1 id="modal1-title">Deseja ativar o TRADUZ ?</h1>
+          <button data-message="SIM" class="accept" onclick="activateTranslate()">SIM</button>
           <button class="reject" onclick="closeModal('modal1')">NÃO</button>
         </div>
       </div>
-    </div>
+    </dialog>
 
     <div class="modal" id="modal2">
       <div class="modal-content">
