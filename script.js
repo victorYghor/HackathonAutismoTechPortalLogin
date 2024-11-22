@@ -1,18 +1,52 @@
 function openModal(modalId) {
   document.body.style.overflow = 'hidden'; 
   const modal = document.getElementById(modalId);
+  
   if (modal) {
+    // Exibe o modal
     modal.style.display = 'flex';
+    
+    // Define os atributos de acessibilidade
+    modal.setAttribute('aria-hidden', 'false');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('role', 'dialog');
+
+    // Esconde o conteúdo de fundo
+    document.querySelectorAll('body > *:not(dialog)').forEach(element => {
+      console.log(element)
+      element.setAttribute('aria-hidden', 'true');
+    });
+
+    modal.focus()
   }
 }
+
 
 function closeModal(modalId) {
   document.body.style.overflow = '';
   const modal = document.getElementById(modalId);
+  
   if (modal) {
+    // Esconde o modal
     modal.style.display = 'none';
+    
+    // Atualiza os atributos de acessibilidade
+    modal.setAttribute('aria-hidden', 'true');
+    modal.removeAttribute('aria-modal');
+    
+    // Mostra o conteúdo de fundo
+    document.querySelectorAll('body > *:not(dialog)').forEach(element => {
+      element.removeAttribute('aria-hidden');
+    });
+
+    // Retorna o foco para o botão que abriu o modal
+    const openButton = document.querySelector(`[onclick="openModal('${modalId}')"]`);
+    if (openButton) {
+      openButton.focus();
+    }
   }
 }
+
 
 function closeAnyModal() {
   document.body.style.overflow = '';  
