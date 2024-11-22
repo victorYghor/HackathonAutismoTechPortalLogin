@@ -54,7 +54,7 @@
       </div>
     </dialog>
 
-    <div class="modal" id="modal2">
+    <div class="modal" id="modal2"  tabIndex="-1" aria-labelledby="modal1-title" aria-describedby="modal1-description">
       <div class="modal-content">
         <h1>OLÁ!</h1>
         <p>
@@ -62,8 +62,8 @@
           Gostaríamos de contar com sua permissão para usar essa tecnologia e processar as informações necessárias de forma segura.
         </p>
         <div class="button-group">
-          <button class="accept" onclick="feedbackTranslate()">ACEITAR</button>
-          <button class="reject" onclick="closeModal('modal2')">RECUSAR</button>
+          <button data-message="ACEITAR"  class="accept" onclick="feedbackTranslate()">ACEITAR</button>
+          <button data-message="RECUSAR" class="reject" onclick="closeModal('modal2')">RECUSAR</button>
         </div>
         <a href="#" class="terms-link" onclick="showTerms()">Termos de uso</a>
       </div>

@@ -1,4 +1,5 @@
 function openModal(modalId) {
+  console.log("open called here")
   document.body.style.overflow = 'hidden'; 
   const modal = document.getElementById(modalId);
   
@@ -38,12 +39,6 @@ function closeModal(modalId) {
     document.querySelectorAll('body > *:not(dialog)').forEach(element => {
       element.removeAttribute('aria-hidden');
     });
-
-    // Retorna o foco para o botão que abriu o modal
-    const openButton = document.querySelector(`[onclick="openModal('${modalId}')"]`);
-    if (openButton) {
-      openButton.focus();
-    }
   }
 }
 
