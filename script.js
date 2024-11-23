@@ -17,7 +17,7 @@ function openModal(modalId) {
       console.log(element)
       element.setAttribute('aria-hidden', 'true');
     });
-
+    console.log("modal " + modalId)
     modal.focus()
   }
 }
@@ -54,12 +54,14 @@ function closeAnyModal() {
 function activateTranslate() {
   closeModal('modal1');
   openModal('modal2');
+  const aceitarModal = document.querySelect("modal2")
+  aceitarModal.focus()
 }
 
 function feedbackTranslate() {
   closeModal('modal2');
   alert('Traduz ativado com sucesso!');
-
+  window.location.href = "correct.html";
   document.getElementById('translate-text').style.display = 'inline'; 
 }
 
